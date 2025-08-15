@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Tangerine:wght@400;700&display=swap"
       rel="stylesheet"
     />
-
+    
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div id="chooseGame" style="display: none">
+    <div id="chooseGame" style="display: none;">
       <div id="chooseGameInner">
         <button id="firstSet">Learn Vowels</button>
         <button id="secondSet">Learn Consonants</button>
@@ -58,6 +58,10 @@
         <img
           id="runRightKey"
           src="./images/gameControlImages/RightKeyD.png"
+        />or
+        <img
+          id="swipeRight"
+          src="./images/gameControlImages/swipeRight.png"
         />to
         <img
           id="runningRight"
@@ -73,6 +77,9 @@
         />or<img
           id="runLeftKey"
           src="./images/gameControlImages/LeftKeyA.png"
+        />or<img
+          id="swipeLeft"
+          src="./images/gameControlImages/swipeLeft.png"
         />to
         <img
           id="runningLeft"
@@ -85,13 +92,17 @@
         <img id="upArrow" src="./images/gameControlImages/upKey.png" />or<img
           id="upKey"
           src="./images/gameControlImages/upKeyW.png"
-        />
-        to <img id="jumping" src="./images/gameControlImages/jumping.png" /> to
+        />or<img id="swipeUp" src="./images/gameControlImages/swipeUp.png" /> to
+        <img id="jumping" src="./images/gameControlImages/jumping.png" /> to
         jump
       </p>
       <p id="punchRight">
         press
-        <img id="eKey" src="./images/gameControlImages/punchRightE.png" />
+        <img id="eKey" src="./images/gameControlImages/punchRightE.png" />or tap
+        twice<img
+          id="doubleTap"
+          src="./images/gameControlImages/doubleTap.png"
+        />
         for
         <img
           id="punchingRight"
@@ -101,13 +112,17 @@
       </p>
       <p id="punchLeft">
         press
-        <img id="qKey" src="./images/gameControlImages/punchLeftQ.png" /> for
+        <img id="qKey" src="./images/gameControlImages/punchLeftQ.png" /> or tap
+        twice
+        <img id="doubleTap" src="./images/gameControlImages/doubleTap.png" />
+        for
         <img
           id="punchingLeft"
           src="./images/gameControlImages/punchingLeft.png"
         />punch left
       </p>
-      <div><button id="startGame">Start Game</button></div>
+
+      <button id="startGame">Start Game</button>
     </div>
     <div id="GameOverScreen">
       <h1>game over</h1>
