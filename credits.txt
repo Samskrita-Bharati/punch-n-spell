@@ -1,0 +1,12 @@
+credits: level 1
+background:Eder Muniz https://edermunizz.itch.io/
+player: Bevouliin https://bevouliin.com
+enemy images: Bevouliin https://bevouliin.com
+sound effects: https://opengameart.org
+
+
+credits : level 2
+background: www.mobilegamegraphics.com
+
+credits: level 3
+background: Vina https://vgdr.itch.io/underwater-background-pack

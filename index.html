@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Alphabets & Numbers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Salsa&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="landingPage">
+      <div id="welcomeScreen">
+        <h1 id="animatedTitle">Embark on Adventure - Welcome !!</h1>
+
+        <p>
+          Get ready to embark on an exciting journey through forests and cities
+          learning Sanskrit vowels, consonants, and numbers.
+        </p>
+
+        <p>
+          Along the way, you'll face various challenges, including battles with
+          bats, ghosts, bees, and other monsters!
+        </p>
+        <p>
+          Defend yourself using your skills: punch, step, or even use your head
+          to defeat them!
+        </p>
+
+        <h2>Your adventure awaits...</h2>
+
+        <button id="welcomeScreenButton">Proceed to Game</button>
+      </div>
+    </div>
+
+    <div id="chooseGame" style="display: none">
+      <div id="chooseGameInner">
+        <button id="firstSet">Learn Vowels</button>
+        <button id="secondSet">Learn Consonants</button>
+        <button id="numberSet">Learn Numbers</button>
+      </div>
+    </div>
+    <div id="gameControls">
+      <h1 id="gameControlsHeading">game controls</h1>
+      <p id="runRight">
+        press
+        <img id="runRightArrow" src="./images/gameControlImages/RightKey.png" />
+        or
+        <img
+          id="runRightKey"
+          src="./images/gameControlImages/RightKeyD.png"
+        />to
+        <img
+          id="runningRight"
+          src="./images/gameControlImages/runningRightImage.png"
+        />
+        Run to right
+      </p>
+      <p id="runLeft">
+        press
+        <img
+          id="runLeftArrow"
+          src="./images/gameControlImages/LeftKey.png"
+        />or<img
+          id="runLeftKey"
+          src="./images/gameControlImages/LeftKeyA.png"
+        />to
+        <img
+          id="runningLeft"
+          src="./images/gameControlImages/runningLeftImage.png"
+        />
+        run to left
+      </p>
+      <p id="jump">
+        press
+        <img id="upArrow" src="./images/gameControlImages/upKey.png" />or<img
+          id="upKey"
+          src="./images/gameControlImages/upKeyW.png"
+        />
+        to <img id="jumping" src="./images/gameControlImages/jumping.png" /> to
+        jump
+      </p>
+      <p id="punchRight">
+        press
+        <img id="eKey" src="./images/gameControlImages/punchRightE.png" />
+        for
+        <img
+          id="punchingRight"
+          src="./images/gameControlImages/punchingRight.png"
+        />
+        punch right
+      </p>
+      <p id="punchLeft">
+        press
+        <img id="qKey" src="./images/gameControlImages/punchLeftQ.png" /> for
+        <img
+          id="punchingLeft"
+          src="./images/gameControlImages/punchingLeft.png"
+        />punch left
+      </p>
+      <div><button id="startGame">Start Game</button></div>
+    </div>
+    <div id="GameOverScreen">
+      <h1>game over</h1>
+      <h2 id="gameOver"></h2>
+      <h3>your total score: <span id="totalScore"></span></h3>
+      <h3>total coins : <span id="totalCoins"></span></h3>
+      <h4>
+        Press <button id="enterButton">Enter</button>
+        <span id="nextStage"></span>
+      </h4>
+      <h5>press <button id="escapeButton">Esc</button> for main menu</h5>
+    </div>
+    <div id="finalGameOverScreen">
+      <h2 id="finalGameOver"></h2>
+      <h3>your total score: <span id="finalTotalScore"></span></h3>
+      <h3>total coins : <span id="finalTotalCoins"></span></h3>
+    </div>
+    <canvas id="canvas1"></canvas>
+
+    <div class="levelOne" id="levelOne">
+      <!--Background Images-->
+      <img id="layer1" src="./images/backgroundimages/Layer_0011_0.png" />
+      <img id="layer2" src="./images/backgroundimages/Layer_0010_1.png" />
+      <img id="layer3" src="./images/backgroundimages/Layer_0009_2.png" />
+      <img id="layer4" src="./images/backgroundimages/Layer_0008_3.png" />
+      <img id="layer5" src="./images/backgroundimages/Layer_0006_4.png" />
+      <img id="layer6" src="./images/backgroundimages/Layer_0005_5.png" />
+      <img id="layer7" src="./images/backgroundimages/Layer_0003_6.png" />
+      <img id="layer8" src="./images/backgroundimages/Layer_0002_7.png" />
+      <img id="layer9" src="./images/backgroundimages/Layer_0001_8.png" />
+      <img id="layer10" src="./images/backgroundimages/Layer_0000_9.png" />
+      <img id="layer11" src="./images/backgroundimages/Layer_0004_Lights.png" />
+      <img id="layer12" src="./images/backgroundimages/Layer_0007_Lights.png" />
+      <!-- Alphabet Images-->
+      <img id="alphabetOne" src="./images/firstbatchalphabets/alphabet1.png" />
+      <img id="alphabetTwo" src="./images/firstbatchalphabets/alphabet2.png" />
+      <img
+        id="alphabetThree"
+        src="./images/firstbatchalphabets/alphabet3.png"
+      />
+      <img id="alphabetFour" src="./images/firstbatchalphabets/alphabet4.png" />
+      <img id="alphabetFive" src="./images/firstbatchalphabets/alphabet5.png" />
+      <img id="alphabetSix" src="./images/firstbatchalphabets/alphabet6.png" />
+      <img
+        id="alphabetSeven"
+        src="./images/firstbatchalphabets/alphabet7.png"
+      />
+      <img
+        id="alphabetEight"
+        src="./images/firstbatchalphabets/alphabet8.png"
+      />
+      <img id="alphabetNine" src="./images/firstbatchalphabets/alphabet9.png" />
+      <img id="alphabetTen" src="./images/firstbatchalphabets/Alphabet10.png" />
+      <img
+        id="alphabetEleven"
+        src="./images/firstbatchalphabets/alphabet11.png"
+      />
+      <img
+        id="alphabetTwelve"
+        src="./images/firstbatchalphabets/alphabet12.png"
+      />
+      <img
+        id="alphabetThirteen"
+        src="./images/firstbatchalphabets/alphabet13.png"
+      />
+      <img
+        id="alphabetFourteen"
+        src="./images/firstbatchalphabets/alphabet14.png"
+      />
+      <img
+        id="alphabetFifteen"
+        src="./images/firstbatchalphabets/alphabet15.png"
+      />
+      <!--Audio files-->
+      <audio
+        id="alphabetOneAudio"
+        src="./audio/firstbatchalphabets/a.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwoAudio"
+        src="./audio/firstbatchalphabets/ā.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThreeAudio"
+        src="./audio/firstbatchalphabets/i.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFourAudio"
+        src="./audio/firstbatchalphabets/ī.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFiveAudio"
+        src="./audio/firstbatchalphabets/u.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetSixAudio"
+        src="./audio/firstbatchalphabets/ū.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetSevenAudio"
+        src="./audio/firstbatchalphabets/ē.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetEightAudio"
+        src="./audio/firstbatchalphabets/ai.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetNineAudio"
+        src="./audio/firstbatchalphabets/ō.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTenAudio"
+        src="./audio/firstbatchalphabets/au.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetElevenAudio"
+        src="./audio/firstbatchalphabets/r̥.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwelveAudio"
+        src="./audio/firstbatchalphabets/r̥̄.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirteenAudio"
+        src="./audio/firstbatchalphabets/l̥.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFourteenAudio"
+        src="./audio/firstbatchalphabets/aṁ.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFifteenAudio"
+        src="./audio/firstbatchalphabets/aḥ.mp3"
+        preload="auto"
+      ></audio>
+      <!--collision Audio-->
+      <audio
+        id="boomAudio"
+        src="./audio/gamessoundeffects/boom.wav"
+        preload="auto"
+      ></audio>
+      <audio
+        id="rustilng"
+        src="./audio/gamessoundeffects/rustling.flac"
+        preload="auto"
+      ></audio>
+      <!--player audio-->
+      <audio
+        id="runningAudio"
+        src="./audio/gamessoundeffects/running.wav"
+        preload="auto"
+      ></audio>
+      <audio
+        id="jumpingAudio"
+        src="./audio/gamessoundeffects/jumping.ogg"
+        preload="auto"
+      ></audio>
+      <audio
+        id="fallingAudio"
+        src="./audio/gamessoundeffects/falling.wav"
+        preload="auto"
+      ></audio>
+      <audio
+        id="punchingAudio"
+        src="./audio/gamessoundeffects/punch.ogg"
+        preload="auto"
+      ></audio>
+      <audio
+        id="hitAudio"
+        src="./audio/gamessoundeffects/hit.ogg"
+        preload="auto"
+      ></audio>
+
+      <!--player Image-->
+      <img id="playerImage1" src="./images/playerSpriteSheet1.png" />
+      <!--Ghost Image-->
+      <img id="flyingGhost" src="./images/flyingghost.png" />
+      <!--Bats Image-->
+      <img id="flyingBats" src="./images/flyingbats.png" />
+      <!--UI Images-->
+      <img id="coins" src="./images/coins.png" />
+      <img id="score" src="./images/score.png" />
+      <img id="lives" src="./images/lives.png" />
+      <!--Collison image-->
+      <img id="boom" src="./images/boom.png" />
+      <!--heart image-->
+      <img id="heart" src="./images/heart.png" />
+    </div>
+    <div class="levelTwo" id="levelTwo">
+      <!--Background Images-->
+      <img
+        id="levelTwolayer1"
+        src="./images/backgroundimageslevel2/layer_08_1920 x 1080.png"
+      />
+      <img
+        id="levelTwolayer2"
+        src="./images/backgroundimageslevel2/layer_07_1920 x 1080.png"
+      />
+      <img
+        id="levelTwolayer3"
+        src="./images/backgroundimageslevel2/layer_06_1920 x 1080.png"
+      />
+      <img
+        id="levelTwolayer4"
+        src="./images/backgroundimageslevel2/layer_05_1920 x 1080.png"
+      />
+      <img
+        id="levelTwolayer5"
+        src="./images/backgroundimageslevel2/layer_04_1920 x 1080.png"
+      />
+      <img
+        id="levelTwolayer6"
+        src="./images/backgroundimageslevel2/layer_03_1920 x 1080.png"
+      />
+
+      <img
+        id="levelTwolayer7"
+        src="./images/backgroundimageslevel2/layer_02_1920 x 1080.png"
+      />
+      <img
+        id="levelTwolayer8"
+        src="./images/backgroundimageslevel2/layer_01_1920 x 1080.png"
+      />
+      <!--Alphabet Images-->
+      <img
+        id="alphabetSixteen"
+        src="./images/secondbatchalphabets/alphabet16.png"
+      />
+      <img
+        id="alphabetSeventeen"
+        src="./images/secondbatchalphabets/alphabet17.png"
+      />
+      <img
+        id="alphabetEighteen"
+        src="./images/secondbatchalphabets/alphabet18.png"
+      />
+      <img
+        id="alphabetNineteen"
+        src="./images/secondbatchalphabets/alphabet19.png"
+      />
+      <img
+        id="alphabetTwenty"
+        src="./images/secondbatchalphabets/alphabet20.png"
+      />
+      <img
+        id="alphabetTwentyOne"
+        src="./images/secondbatchalphabets/alphabet21.png"
+      />
+      <img
+        id="alphabetTwentyTwo"
+        src="./images/secondbatchalphabets/alphabet22.png"
+      />
+      <img
+        id="alphabetTwentyThree"
+        src="./images/secondbatchalphabets/alphabet23.png"
+      />
+      <img
+        id="alphabetTwentyFour"
+        src="./images/secondbatchalphabets/alphabet24.png"
+      />
+      <img
+        id="alphabetTwentyFive"
+        src="./images/secondbatchalphabets/alphabet25.png"
+      />
+      <img
+        id="alphabetTwentySix"
+        src="./images/secondbatchalphabets/alphabet26.png"
+      />
+      <img
+        id="alphabetTwentySeven"
+        src="./images/secondbatchalphabets/alphabet27.png"
+      />
+      <img
+        id="alphabetTwentyEight"
+        src="./images/secondbatchalphabets/alphabet28.png"
+      />
+      <img
+        id="alphabetTwentyNine"
+        src="./images/secondbatchalphabets/alphabet29.png"
+      />
+      <img
+        id="alphabetThirty"
+        src="./images/secondbatchalphabets/alphabet30.png"
+      />
+      <img
+        id="alphabetThirtyOne"
+        src="./images/secondbatchalphabets/alphabet31.png"
+      />
+      <img
+        id="alphabetThirtyTwo"
+        src="./images/secondbatchalphabets/alphabet32.png"
+      />
+      <img
+        id="alphabetThirtyThree"
+        src="./images/secondbatchalphabets/alphabet33.png"
+      />
+      <img
+        id="alphabetThirtyFour"
+        src="./images/secondbatchalphabets/alphabet34.png"
+      />
+      <img
+        id="alphabetThirtyFive"
+        src="./images/secondbatchalphabets/alphabet35.png"
+      />
+      <img
+        id="alphabetThirtySix"
+        src="./images/secondbatchalphabets/alphabet36.png"
+      />
+      <img
+        id="alphabetThirtySeven"
+        src="./images/secondbatchalphabets/alphabet37.png"
+      />
+      <img
+        id="alphabetThirtyEight"
+        src="./images/secondbatchalphabets/alphabet38.png"
+      />
+      <img
+        id="alphabetThirtyNine"
+        src="./images/secondbatchalphabets/alphabet39.png"
+      />
+      <img
+        id="alphabetForty"
+        src="./images/secondbatchalphabets/alphabet40.png"
+      />
+      <img
+        id="alphabetFortyOne"
+        src="./images/secondbatchalphabets/alphabet41.png"
+      />
+      <img
+        id="alphabetFortyTwo"
+        src="./images/secondbatchalphabets/alphabet42.png"
+      />
+      <img
+        id="alphabetFortyThree"
+        src="./images/secondbatchalphabets/alphabet43.png"
+      />
+      <img
+        id="alphabetFortyFour"
+        src="./images/secondbatchalphabets/alphabet44.png"
+      />
+      <img
+        id="alphabetFortyFive"
+        src="./images/secondbatchalphabets/alphabet45.png"
+      />
+      <img
+        id="alphabetFortySix"
+        src="./images/secondbatchalphabets/alphabet46.png"
+      />
+      <img
+        id="alphabetFortySeven"
+        src="./images/secondbatchalphabets/alphabet47.png"
+      />
+      <img
+        id="alphabetFortyEight"
+        src="./images/secondbatchalphabets/alphabet48.png"
+      />
+      <!--Audio Files-->
+      <audio
+        id="alphabetSixteenAudio"
+        src="./audio/secondbatchalphabets/ka.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetSeventeenAudio"
+        src="./audio/secondbatchalphabets/kha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetEighteenAudio"
+        src="./audio/secondbatchalphabets/ga.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetNineteenAudio"
+        src="./audio/secondbatchalphabets/gha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyAudio"
+        src="./audio/secondbatchalphabets/ṅa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyOneAudio"
+        src="./audio/secondbatchalphabets/ca.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyTwoAudio"
+        src="./audio/secondbatchalphabets/cha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyThreeAudio"
+        src="./audio/secondbatchalphabets/ja.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyFourAudio"
+        src="./audio/secondbatchalphabets/jha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyFiveAudio"
+        src="./audio/secondbatchalphabets/ña.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentySixAudio"
+        src="./audio/secondbatchalphabets/ṭa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentySevenAudio"
+        src="./audio/secondbatchalphabets/ṭha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyEightAudio"
+        src="./audio/secondbatchalphabets/ḍa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetTwentyNineAudio"
+        src="./audio/secondbatchalphabets/ḍha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyAudio"
+        src="./audio/secondbatchalphabets/ṇa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyOneAudio"
+        src="./audio/secondbatchalphabets/ta.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyTwoAudio"
+        src="./audio/secondbatchalphabets/tha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyThreeAudio"
+        src="./audio/secondbatchalphabets/da.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyFourAudio"
+        src="./audio/secondbatchalphabets/dha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyFiveAudio"
+        src="./audio/secondbatchalphabets/na.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtySixAudio"
+        src="./audio/secondbatchalphabets/pa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtySevenAudio"
+        src="./audio/secondbatchalphabets/pha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyEightAudio"
+        src="./audio/secondbatchalphabets/ba.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetThirtyNineAudio"
+        src="./audio/secondbatchalphabets/bha.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortyAudio"
+        src="./audio/secondbatchalphabets/ma.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortyOneAudio"
+        src="./audio/secondbatchalphabets/ya.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortyTwoAudio"
+        src="./audio/secondbatchalphabets/ra.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortyThreeAudio"
+        src="./audio/secondbatchalphabets/la.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortyFourAudio"
+        src="./audio/secondbatchalphabets/va.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortyFiveAudio"
+        src="./audio/secondbatchalphabets/śa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortySixAudio"
+        src="./audio/secondbatchalphabets/ṣa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortySevenAudio"
+        src="./audio/secondbatchalphabets/sa.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="alphabetFortyEightAudio"
+        src="./audio/secondbatchalphabets/ha.mp3"
+        preload="auto"
+      ></audio>
+      <!--Collision Image-->
+      <img id="fireCollision" src="./images/firecollision.png" />
+      <img
+        id="squishingGroundEnemyCollision"
+        src="./images/fallingcollisiongroundEnemy.png"
+      />
+
+      <!--Enemy-->
+      <img id="groundEnemy" src="./images/groundEnemy.png" />
+      <img id="grumpyBee" src="./images/grumpybee.png" />
+    </div>
+    <div class="levelThree" id="levelThree">
+      <img
+        id="levelThreeLayer1"
+        src="./images/level3backgroundimages/layer_07_1920 x 1080.png"
+      />
+      <img
+        id="levelThreeLayer2"
+        src="./images/level3backgroundimages/layer_06_1920 x 1080.png"
+      />
+      <img
+        id="levelThreeLayer3"
+        src="./images/level3backgroundimages/layer_05_1920 x 1080.png"
+      />
+      <img
+        id="levelThreeLayer4"
+        src="./images/level3backgroundimages/layer_04_1920 x 1080.png"
+      />
+      <img
+        id="levelThreeLayer5"
+        src="./images/level3backgroundimages/layer_03_1920 x 1080.png"
+      />
+      <img
+        id="levelThreeLayer6"
+        src="./images/level3backgroundimages/layer_02_1920 x 1080.png"
+      />
+      <img
+        id="levelThreeLayer7"
+        src="./images/level3backgroundimages/layer_01_1920 x 1080.png"
+      />
+      <!--Number Images-->
+      <img id="numberOne" src="./images/numbers/1.png" />
+      <img id="numberTwo" src="./images/numbers/2.png" />
+      <img id="numberThree" src="./images/numbers/3.png" />
+      <img id="numberFour" src="./images/numbers/4.png" />
+      <img id="numberFive" src="./images/numbers/5.png" />
+      <img id="numberSix" src="./images/numbers/6.png" />
+      <img id="numberSeven" src="./images/numbers/7.png" />
+      <img id="numberEight" src="./images/numbers/8.png" />
+      <img id="numberNine" src="./images/numbers/9.png" />
+      <img id="numberTen" src="./images/numbers/10.png" />
+      <img id="numberEleven" src="./images/numbers/11.png" />
+      <img id="numberTwelve" src="./images/numbers/12.png" />
+      <img id="numberThirteen" src="./images/numbers/13.png" />
+      <img id="numberFourteen" src="./images/numbers/14.png" />
+      <img id="numberFifteen" src="./images/numbers/15.png" />
+      <img id="numberSixteen" src="./images/numbers/16.png" />
+      <img id="numberSeventeen" src="./images/numbers/17.png" />
+      <img id="numberEighteen" src="./images/numbers/18.png" />
+      <img id="numberNineteen" src="./images/numbers/19.png" />
+      <img id="numberTwenty" src="./images/numbers/20.png" />
+      <img id="numberTwentyOne" src="./images/numbers/21.png" />
+      <img id="numberTwentyTwo" src="./images/numbers/22.png" />
+      <img id="numberTwentyThree" src="./images/numbers/23.png" />
+      <img id="numberTwentyFour" src="./images/numbers/24.png" />
+      <img id="numberTwentyFive" src="./images/numbers/25.png" />
+      <img id="numberTwentySix" src="./images/numbers/26.png" />
+      <img id="numberTwentySeven" src="./images/numbers/27.png" />
+      <img id="numberTwentyEight" src="./images/numbers/28.png" />
+      <img id="numberTwentyNine" src="./images/numbers/29.png" />
+      <img id="numberThirty" src="./images/numbers/30.png" />
+      <img id="numberThirtyOne" src="./images/numbers/31.png" />
+      <img id="numberThirtyTwo" src="./images/numbers/32.png" />
+      <img id="numberThirtyThree" src="./images/numbers/33.png" />
+      <img id="numberThirtyFour" src="./images/numbers/34.png" />
+      <img id="numberThirtyFive" src="./images/numbers/35.png" />
+      <img id="numberThirtySix" src="./images/numbers/36.png" />
+      <img id="numberThirtySeven" src="./images/numbers/37.png" />
+      <img id="numberThirtyEight" src="./images/numbers/38.png" />
+      <img id="numberThirtyNine" src="./images/numbers/39.png" />
+      <img id="numberForty" src="./images/numbers/40.png" />
+      <img id="numberFortyOne" src="./images/numbers/41.png" />
+      <img id="numberFortyTwo" src="./images/numbers/42.png" />
+      <img id="numberFortyThree" src="./images/numbers/43.png" />
+      <img id="numberFortyFour" src="./images/numbers/44.png" />
+      <img id="numberFortyFive" src="./images/numbers/45.png" />
+      <img id="numberFortySix" src="./images/numbers/46.png" />
+      <img id="numberFortySeven" src="./images/numbers/47.png" />
+      <img id="numberFortyEight" src="./images/numbers/48.png" />
+      <img id="numberFortyNine" src="./images/numbers/49.png" />
+      <img id="numberFifty" src="./images/numbers/50.png" />
+      <img id="numberFiftyOne" src="./images/numbers/51.png" />
+      <img id="numberFiftyTwo" src="./images/numbers/52.png" />
+      <img id="numberFiftyThree" src="./images/numbers/53.png" />
+      <img id="numberFiftyFour" src="./images/numbers/54.png" />
+      <img id="numberFiftyFive" src="./images/numbers/55.png" />
+      <img id="numberFiftySix" src="./images/numbers/56.png" />
+      <img id="numberFiftySeven" src="./images/numbers/57.png" />
+      <img id="numberFiftyEight" src="./images/numbers/58.png" />
+      <img id="numberFiftyNine" src="./images/numbers/59.png" />
+      <img id="numberSixty" src="./images/numbers/60.png" />
+      <img id="numberSixtyOne" src="./images/numbers/61.png" />
+      <img id="numberSixtyTwo" src="./images/numbers/62.png" />
+      <img id="numberSixtyThree" src="./images/numbers/63.png" />
+      <img id="numberSixtyFour" src="./images/numbers/64.png" />
+      <img id="numberSixtyFive" src="./images/numbers/65.png" />
+      <img id="numberSixtySix" src="./images/numbers/66.png" />
+      <img id="numberSixtySeven" src="./images/numbers/67.png" />
+      <img id="numberSixtyEight" src="./images/numbers/68.png" />
+      <img id="numberSixtyNine" src="./images/numbers/69.png" />
+      <img id="numberSeventy" src="./images/numbers/70.png" />
+      <img id="numberSeventyOne" src="./images/numbers/71.png" />
+      <img id="numberSeventyTwo" src="./images/numbers/72.png" />
+      <img id="numberSeventyThree" src="./images/numbers/73.png" />
+      <img id="numberSeventyFour" src="./images/numbers/74.png" />
+      <img id="numberSeventyFive" src="./images/numbers/75.png" />
+      <img id="numberSeventySix" src="./images/numbers/76.png" />
+      <img id="numberSeventySeven" src="./images/numbers/77.png" />
+      <img id="numberSeventyEight" src="./images/numbers/78.png" />
+      <img id="numberSeventyNine" src="./images/numbers/79.png" />
+      <img id="numberEighty" src="./images/numbers/80.png" />
+      <img id="numberEightyOne" src="./images/numbers/81.png" />
+      <img id="numberEightyTwo" src="./images/numbers/82.png" />
+      <img id="numberEightyThree" src="./images/numbers/83.png" />
+      <img id="numberEightyFour" src="./images/numbers/84.png" />
+      <img id="numberEightyFive" src="./images/numbers/85.png" />
+      <img id="numberEightySix" src="./images/numbers/86.png" />
+      <img id="numberEightySeven" src="./images/numbers/87.png" />
+      <img id="numberEightyEight" src="./images/numbers/88.png" />
+      <img id="numbersEightyNine" src="./images/numbers/89.png" />
+      <img id="numberNinety" src="./images/numbers/90.png" />
+      <img id="numberNinetyOne" src="./images/numbers/91.png" />
+      <img id="numberNinetyTwo" src="./images/numbers/92.png" />
+      <img id="numberNinetyThree" src="./images/numbers/93.png" />
+      <img id="numberNinetyFour" src="./images/numbers/94.png" />
+      <img id="numberNinetyFive" src="./images/numbers/95.png" />
+      <img id="numberNinetySix" src="./images/numbers/96.png" />
+      <img id="numberNinetySeven" src="./images/numbers/97.png" />
+      <img id="numberNinetyEight" src="./images/numbers/98.png" />
+      <img id="numberNinetyNine" src="./images/numbers/99.png" />
+      <img id="numberHundred" src="./images/numbers/100.png" />
+
+      <!--numbers audio files-->
+      <audio
+        id="numberOneAudio"
+        src="./audio/numbers/audio/00000001.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwoAudio"
+        src="./audio/numbers/audio/00000002.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThreeAudio"
+        src="./audio/numbers/audio/00000003.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFourAudio"
+        src="./audio/numbers/audio/00000004.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiveAudio"
+        src="./audio/numbers/audio/00000005.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixAudio"
+        src="./audio/numbers/audio/00000006.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSevenAudio"
+        src="./audio/numbers/audio/00000007.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightAudio"
+        src="./audio/numbers/audio/00000008.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNineAudio"
+        src="./audio/numbers/audio/00000009.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTenAudio"
+        src="./audio/numbers/audio/00000010.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberElevenAudio"
+        src="./audio/numbers/audio/00000011.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwelveAudio"
+        src="./audio/numbers/audio/00000012.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirteenAudio"
+        src="./audio/numbers/audio/00000013.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFourteenAudio"
+        src="./audio/numbers/audio/00000014.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFifteenAudio"
+        src="./audio/numbers/audio/00000015.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixteenAudio"
+        src="./audio/numbers/audio/00000016.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventeenAudio"
+        src="./audio/numbers/audio/00000017.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEighteenAudio"
+        src="./audio/numbers/audio/00000018.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNineteenAudio"
+        src="./audio/numbers/audio/00000019.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyAudio"
+        src="./audio/numbers/audio/00000020-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyOneAudio"
+        src="./audio/numbers/audio/00000021.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyTwoAudio"
+        src="./audio/numbers/audio/00000022.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyThreeAudio"
+        src="./audio/numbers/audio/00000023.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyFourAudio"
+        src="./audio/numbers/audio/00000024.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyFiveAudio"
+        src="./audio/numbers/audio/00000025.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentySixAudio"
+        src="./audio/numbers/audio/00000026.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentySevenAudio"
+        src="./audio/numbers/audio/00000027.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyEightAudio"
+        src="./audio/numbers/audio/00000028.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberTwentyNineAudio"
+        src="./audio/numbers/audio/00000029.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyAudio"
+        src="./audio/numbers/audio/00000030-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyOneAudio"
+        src="./audio/numbers/audio/00000031.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyTwoAudio"
+        src="./audio/numbers/audio/00000032.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyThreeAudio"
+        src="./audio/numbers/audio/00000033.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyFourAudio"
+        src="./audio/numbers/audio/00000034.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyFiveAudio"
+        src="./audio/numbers/audio/00000035.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtySixAudio"
+        src="./audio/numbers/audio/00000036.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtySevenAudio"
+        src="./audio/numbers/audio/00000037.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyEightAudio"
+        src="./audio/numbers/audio/00000038.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberThirtyNineAudio"
+        src="./audio/numbers/audio/00000039.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyAudio"
+        src="./audio/numbers/audio/00000040-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyOneAudio"
+        src="./audio/numbers/audio/00000041.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyTwoAudio"
+        src="./audio/numbers/audio/00000042.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyThreeAudio"
+        src="./audio/numbers/audio/00000043.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyFourAudio"
+        src="./audio/numbers/audio/00000044.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyFiveAudio"
+        src="./audio/numbers/audio/00000045.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortySixAudio"
+        src="./audio/numbers/audio/00000046.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortySevenAudio"
+        src="./audio/numbers/audio/00000047.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyEightAudio"
+        src="./audio/numbers/audio/00000048.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFortyNineAudio"
+        src="./audio/numbers/audio/00000049.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyAudio"
+        src="./audio/numbers/audio/00000050-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyOneAudio"
+        src="./audio/numbers/audio/00000051.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyTwoAudio"
+        src="./audio/numbers/audio/00000052.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyThreeAudio"
+        src="./audio/numbers/audio/00000053.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyFourAudio"
+        src="./audio/numbers/audio/00000054.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyFiveAudio"
+        src="./audio/numbers/audio/00000055.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftySixAudio"
+        src="./audio/numbers/audio/00000056.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftySevenAudio"
+        src="./audio/numbers/audio/00000057.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyEightAudio"
+        src="./audio/numbers/audio/00000058.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberFiftyNineAudio"
+        src="./audio/numbers/audio/00000059.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyAudio"
+        src="./audio/numbers/audio/00000060-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyOneAudio"
+        src="./audio/numbers/audio/00000061.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyTwoAudio"
+        src="./audio/numbers/audio/00000062.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyThreeAudio"
+        src="./audio/numbers/audio/00000063.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyFourAudio"
+        src="./audio/numbers/audio/00000064.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyFiveAudio"
+        src="./audio/numbers/audio/00000065.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtySixAudio"
+        src="./audio/numbers/audio/00000066.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtySevenAudio"
+        src="./audio/numbers/audio/00000067.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyEightAudio"
+        src="./audio/numbers/audio/00000068.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSixtyNineAudio"
+        src="./audio/numbers/audio/00000069.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyAudio"
+        src="./audio/numbers/audio/00000070-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyOneAudio"
+        src="./audio/numbers/audio/00000071.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyTwoAudio"
+        src="./audio/numbers/audio/00000072.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyThreeAudio"
+        src="./audio/numbers/audio/00000073.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyFourAudio"
+        src="./audio/numbers/audio/00000074.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyFiveAudio"
+        src="./audio/numbers/audio/00000075.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventySixAudio"
+        src="./audio/numbers/audio/00000076.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventySevenAudio"
+        src="./audio/numbers/audio/00000077.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyEightAudio"
+        src="./audio/numbers/audio/00000078.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberSeventyNineAudio"
+        src="./audio/numbers/audio/00000079.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyAudio"
+        src="./audio/numbers/audio/00000080-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyOneAudio"
+        src="./audio/numbers/audio/00000081.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyTwoAudio"
+        src="./audio/numbers/audio/00000082.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyThreeAudio"
+        src="./audio/numbers/audio/00000083.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyFourAudio"
+        src="./audio/numbers/audio/00000084.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyFiveAudio"
+        src="./audio/numbers/audio/00000085.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightySixAudio"
+        src="./audio/numbers/audio/00000086.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightySevenAudio"
+        src="./audio/numbers/audio/00000087.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyEightAudio"
+        src="./audio/numbers/audio/00000088.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberEightyNineAudio"
+        src="./audio/numbers/audio/00000089.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyAudio"
+        src="./audio/numbers/audio/00000090-2.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyOneAudio"
+        src="./audio/numbers/audio/00000091.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyTwoAudio"
+        src="./audio/numbers/audio/00000092.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyThreeAudio"
+        src="./audio/numbers/audio/00000093.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyFourAudio"
+        src="./audio/numbers/audio/00000094.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyFiveAudio"
+        src="./audio/numbers/audio/00000095.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetySixAudio"
+        src="./audio/numbers/audio/00000096.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetySevenAudio"
+        src="./audio/numbers/audio/00000097.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyEightAudio"
+        src="./audio/numbers/audio/00000098.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberNinetyNineAudio"
+        src="./audio/numbers/audio/00000099.mp3"
+        preload="auto"
+      ></audio>
+      <audio
+        id="numberHundredAudio"
+        src="./audio/numbers/audio/00000100-2.mp3"
+        preload="auto"
+      ></audio>
+      <!--Enemy Images-->
+      <img id="grassMonster" src="./images/grassmonster.png" />
+      <img id="purpleBug" src="./images/purplebug.png" />
+    </div>
+    <canvas id="scrollingtext"></canvas>
+
+    <script type="module" src="./script/script.js"></script>
+  </body>
+</html>

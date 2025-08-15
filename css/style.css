@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #343434;
+  margin: 0; /* Remove default margin for full viewport effect */
+  overflow: hidden; /* Prevent scrolling issues */
+}
+
+canvas {
+  box-sizing: border-box; /* Ensures padding/border are included in the element's width/height */
+  /* Add margin of 20px all around */
+  background-color: #312f2f;
+}
+#levelOne img,
+#levelTwo img,
+#levelThree {
+  display: none;
+}
+/* game choosing menu*/
+#chooseGame {
+  position: center;
+  border: 3px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: rgba(134, 97, 92, 0.3);
+  border-radius: 15px;
+  box-shadow: 5px -5px 10px rgba(150, 125, 105, 0.8);
+  align-items: center;
+  justify-content: center;
+}
+#chooseGameInner {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+#firstSet,
+#secondSet,
+#numberSet {
+  font-family: "Salsa";
+  text-transform: capitalize;
+  word-spacing: 1px;
+  letter-spacing: 1.25px;
+  margin-top: 35px;
+  width: 400px;
+  height: 45px;
+  border-radius: 15px;
+  background-color: rgba(166, 162, 162, 0.5);
+  box-shadow: 5px 5px rgba(150, 125, 105, 0.8);
+  color: black;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+  color: #1c110a;
+  text-shadow: 3px -3px 3px rgba(100, 82, 68, 0.6);
+}
+/* Game Over Screen*/
+#GameOverScreen,
+#finalGameOverScreen {
+  display: none;
+  border: 3px solid rgba(254, 250, 224, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 450px;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: rgba(254, 250, 224, 0.5);
+  box-shadow: -5px -5px 5px 10px rgba(126, 137, 135, 0.8);
+  font-family: "Salsa";
+}
+#gameOver {
+  font-family: "Salsa";
+  text-align: center;
+  margin-left: 35%;
+}
+#enterButton,
+#escapeButton {
+  display: inline-block;
+  font-family: "Salsa";
+  text-transform: capitalize;
+  word-spacing: 1px;
+  letter-spacing: 1.25px;
+  width: 105px;
+  height: 45px;
+  border-radius: 15px;
+  background-color: rgba(166, 162, 162, 0.5);
+  box-shadow: 5px 5px rgba(150, 125, 105, 0.8);
+  color: black;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 900;
+  color: #1c110a;
+  text-shadow: 3px -3px 3px rgba(100, 82, 68, 0.6);
+}
+h4 {
+  font-family: "Salsa";
+  font-size: 20px;
+  text-transform: capitalize;
+  word-spacing: 1.25px;
+  letter-spacing: 1.25px;
+  text-align: center;
+  justify-content: center;
+  text-shadow: 5px 5px 5px rgba(71, 44, 27, 0.6);
+  margin-top: 20px;
+}
+h5 {
+  font-family: "Salsa";
+  font-size: 20px;
+  text-transform: capitalize;
+  word-spacing: 1.25px;
+  letter-spacing: 1.25px;
+  text-align: center;
+  justify-content: center;
+  text-shadow: 5px 5px 5px rgba(71, 44, 27, 0.6);
+  margin-top: 20px;
+}
+h1 {
+  font-family: "Salsa";
+  font-size: 30px;
+  text-transform: uppercase;
+  padding-top: 15px;
+  word-spacing: 1px;
+  letter-spacing: 1.25px;
+  text-shadow: 5px 5px 5px rgba(71, 44, 27, 0.6);
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+h2,
+h3 {
+  font-family: "Salsa";
+  font-size: 20px;
+  text-transform: uppercase;
+  padding-top: 15px;
+  word-spacing: 1px;
+  letter-spacing: 1.25px;
+  text-shadow: 5px 5px 5px rgba(71, 44, 27, 0.6);
+  margin-top: 20px;
+}
+/*---GameControl Screen---*/
+#gameControls {
+  display: none; /* Initially hidden */
+  align-items: center;
+  justify-content: left;
+  flex-direction: column; /* Stack elements vertically */
+  position: absolute; /* Absolute positioning to enable centering */
+  border: 5px solid rgba(118, 129, 142, 0.1);
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px 10px rgba(198, 199, 196, 0.5);
+  width: 600px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the div exactly in the middle */
+  box-sizing: border-box; /* Ensure padding and borders are included in the element's width/height */
+  background-color: rgba(118, 129, 142, 0.5);
+}
+
+#runRight,
+#runLeft,
+#jump,
+#punchRight,
+#punchLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-top: 10px; /* Increased margin for better spacing */
+  font-family: "Salsa";
+}
+
+#runRightArrow,
+#runRightKey,
+#swipeRight,
+#runningRight,
+#runLeftArrow,
+#runLeftKey,
+#swipeLeft,
+#runningLeft,
+#upArrow,
+#upKey,
+#swipeUp,
+#jumping,
+#eKey,
+#doubleTap,
+#punchingRight,
+#qKey,
+#punchingLeft {
+  width: 50px;
+  height: auto;
+  margin: 0 10px; /* Maintain consistent spacing between images and text */
+}
+
+#startGame {
+  margin-top: 20px; /* Increased margin for better separation */
+  font-size: 25px;
+  width: 200px;
+  font-family: "Salsa", sans-serif; /* Added fallback font */
+  text-transform: capitalize;
+  word-spacing: 1px;
+  letter-spacing: 1.25px;
+  border-radius: 15px;
+  background-color: rgba(166, 162, 162, 0.5);
+  box-shadow: 5px 5px rgba(150, 125, 105, 0.8);
+  font-weight: 900;
+  color: #1c110a;
+  text-shadow: 3px -3px 3px rgba(100, 82, 68, 0.6);
+  margin-left: 30%; /* Center the button */
+}
+
+#gameControlsHeading {
+  margin-top: 10px;
+  padding-top: 0px;
+  text-align: center;
+  font-size: 30px; /* Adjust the heading font size */
+  font-weight: 900; /* Make the heading more prominent */
+  word-spacing: 1.5px;
+  letter-spacing: 1.25px;
+}
+#welcomeScreen {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 2em;
+  color: khaki;
+}
+#welcomeScreen h1,
+h2 {
+  display: flex;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  font-family: "Tangerine", cursive;
+  font-size: larger;
+}
+#welcomeScreen p {
+  display: flex;
+  font-size: 1.15em;
+  letter-spacing: 0.05em;
+  word-spacing: 0.05em;
+  font-weight: 900;
+  font-family: "Tangerine", cursive;
+}
+
+#welcomeScreen button {
+  font-size: 1em;
+  font-family: "Tangerine", cursive;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 15px;
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  cursor: pointer; /* Add pointer cursor for better interactivity */
+  background: linear-gradient(
+    to right,
+    cyan,
+    magenta,
+    yellow,
+    blue
+  ); /* Cross-browser gradient */
+  color: black; /* Set text color */
+  box-shadow: 5px 5px 5px rgba(223, 223, 233, 0.2);
+}
+
+/* Optional hover effect for interactivity */
+#welcomeScreen button:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  background: linear-gradient(
+    to left,
+    blue,
+    yellow,
+    magenta,
+    cyan
+  ); /* Reverse gradient on hover */
+}
