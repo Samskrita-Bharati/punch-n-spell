@@ -87,7 +87,17 @@ class Player {
   }
   playSound(type) {
     if (this.sounds[type]) {
-      this.sounds[type].play();
+      const sound = this.sounds[type];
+
+      // Reset sound to the beginning if it's already playing
+      sound.currentTime = 0;
+
+      // Play with error handling
+      sound.play().catch((err) => {
+        if (err.name !== "AbortError") {
+          console.error("Audio play error:", err);
+        }
+      });
     }
   }
 }

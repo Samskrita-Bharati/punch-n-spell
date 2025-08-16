@@ -174,7 +174,7 @@ export class Game {
     this.width = width;
     this.height = height;
     this.speed = 1;
-    this.maxSpeed = 3;
+    this.maxSpeed = 2;
     this.time = 0;
     this.score = 0;
     this.coins = 0;

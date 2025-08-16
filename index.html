@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Tangerine:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    
+
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -42,7 +42,7 @@
       </div>
     </div>
 
-    <div id="chooseGame" style="display: none;">
+    <div id="chooseGame" style="display: none">
       <div id="chooseGameInner">
         <button id="firstSet">Learn Vowels</button>
         <button id="secondSet">Learn Consonants</button>
@@ -58,10 +58,6 @@
         <img
           id="runRightKey"
           src="./images/gameControlImages/RightKeyD.png"
-        />or
-        <img
-          id="swipeRight"
-          src="./images/gameControlImages/swipeRight.png"
         />to
         <img
           id="runningRight"
@@ -77,9 +73,6 @@
         />or<img
           id="runLeftKey"
           src="./images/gameControlImages/LeftKeyA.png"
-        />or<img
-          id="swipeLeft"
-          src="./images/gameControlImages/swipeLeft.png"
         />to
         <img
           id="runningLeft"
@@ -92,17 +85,13 @@
         <img id="upArrow" src="./images/gameControlImages/upKey.png" />or<img
           id="upKey"
           src="./images/gameControlImages/upKeyW.png"
-        />or<img id="swipeUp" src="./images/gameControlImages/swipeUp.png" /> to
-        <img id="jumping" src="./images/gameControlImages/jumping.png" /> to
+        />
+        to <img id="jumping" src="./images/gameControlImages/jumping.png" /> to
         jump
       </p>
       <p id="punchRight">
         press
-        <img id="eKey" src="./images/gameControlImages/punchRightE.png" />or tap
-        twice<img
-          id="doubleTap"
-          src="./images/gameControlImages/doubleTap.png"
-        />
+        <img id="eKey" src="./images/gameControlImages/punchRightE.png" />
         for
         <img
           id="punchingRight"
@@ -112,9 +101,7 @@
       </p>
       <p id="punchLeft">
         press
-        <img id="qKey" src="./images/gameControlImages/punchLeftQ.png" /> or tap
-        twice
-        <img id="doubleTap" src="./images/gameControlImages/doubleTap.png" />
+        <img id="qKey" src="./images/gameControlImages/punchLeftQ.png" />
         for
         <img
           id="punchingLeft"
@@ -139,6 +126,49 @@
       <h2 id="finalGameOver"></h2>
       <h3>your total score: <span id="finalTotalScore"></span></h3>
       <h3>total coins : <span id="finalTotalCoins"></span></h3>
+      <div class="ratingcontainer">
+        <h3>Rate this game – is it a keeper?</h3>
+
+        <input
+          type="range"
+          min="0"
+          max="5"
+          step="0.5"
+          value="0.5"
+          class="slider"
+          id="favoriteRating"
+        />
+
+        <input
+          type="number"
+          readonly
+          id="ratingDisplay"
+          name="favoriteRating"
+          value="0.5"
+        />
+      </div>
+      <div>
+        <h3>Is this a game you'd mark as a favorite?</h3>
+        <label>
+          <input
+            type="radio"
+            name="isFavorite"
+            id="isFavoriteTrue"
+            value="true"
+          />
+          Yes
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="isFavorite"
+            id="isFavoriteFalse"
+            value="false"
+          />
+          No
+        </label>
+      </div>
+      <button id="welcomeScreenButton">Restart Game</button>
     </div>
     <canvas id="canvas1"></canvas>
 

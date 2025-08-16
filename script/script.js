@@ -12,7 +12,21 @@ window.addEventListener("load", function () {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
+  const baseUrl = "http://localhost:5000/api"; // Replace with the original backend URL for ZATAM, DO NOT DIRECTLY EXPOSE THE ABOVE API
+  // desctructuring the gameID and userID from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  // const gameId = urlParams.get("gameId");
+  // const userId = urlParams.get("userId");
+
+  const gameId = "G_20250810_135344_023_022";
+  const userId = "U_20250810_134926_747_879";
+
+  let startTime;
+  let endTime;
+  let totalTimeSpent;
+
   function startGame() {
+    startTime = new Date().getTime();
     animate(0);
   }
 
@@ -122,7 +136,11 @@ window.addEventListener("load", function () {
         currentSet = "numberSet";
         game = new NumberSet(canvas.width, canvas.height);
       } else if (currentSet === "numberSet") {
+        endTime = new Date().getTime();
+        totalTimeSpent = ((endTime - startTime) / 60000).toFixed(2);
+        console.log("Total Time Spent", totalTimeSpent);
         document.getElementById("finalGameOverScreen").style.display = "block";
+        sendGameData();
         return;
       }
     } else {
@@ -146,6 +164,46 @@ window.addEventListener("load", function () {
 
   window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight
-  })
+    canvas.height = window.innerHeight;
+  });
+
+  function sendGameData() {
+    const score = document.getElementById("finalTotalCoins").textContent;
+
+    console.log(score);
+    const rating = document.getElementById("ratingDisplay").value;
+
+    const favoriteRadio = document.querySelector(
+      'input[name="isFavorite"]:checked'
+    );
+    const isFavorite = favoriteRadio
+      ? favoriteRadio.value === "true"
+      : undefined;
+
+    const gameData = {
+      gameId: gameId,
+      userId: userId,
+      score: parseFloat(score),
+      playTime: totalTimeSpent,
+      rating: parseFloat(rating),
+      isFavorite: isFavorite,
+    };
+
+    console.log("Game Data:", gameData);
+
+    if (!userId) {
+      return console.log("GameData", gameData);
+    }
+
+    fetch(`${baseUrl}/gamesData/addNew`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(gameData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log("Server response:", data))
+      .catch((err) => console.error("Error sending game data:", err));
+  }
 });

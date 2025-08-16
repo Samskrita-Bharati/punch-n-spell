@@ -156,7 +156,6 @@ h3 {
 /*---GameControl Screen---*/
 #gameControls {
   display: none; /* Initially hidden */
-  align-items: center;
   justify-content: left;
   flex-direction: column; /* Stack elements vertically */
   position: absolute; /* Absolute positioning to enable centering */
