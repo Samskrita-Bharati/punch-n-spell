@@ -15,11 +15,11 @@ window.addEventListener("load", function () {
   const baseUrl = "http://localhost:5000/api"; // Replace with the original backend URL for ZATAM, DO NOT DIRECTLY EXPOSE THE ABOVE API
   // desctructuring the gameID and userID from URL
   const urlParams = new URLSearchParams(window.location.search);
-  // const gameId = urlParams.get("gameId");
-  // const userId = urlParams.get("userId");
+  const gameId = urlParams.get("gameId");
+  const userId = urlParams.get("userId");
 
-  const gameId = "G_20250810_135344_023_022";
-  const userId = "U_20250810_134926_747_879";
+  // const gameId = "G_20250810_135240_179_514";
+  // const userId = "U_20250810_134926_747_879";
 
   let startTime;
   let endTime;
@@ -141,7 +141,13 @@ window.addEventListener("load", function () {
         totalTimeSpent = ((endTime - startTime) / 60000).toFixed(2);
         console.log("Total Time Spent", totalTimeSpent);
         document.getElementById("finalGameOverScreen").style.display = "block";
-        sendGameData();
+        const startOverButton = document.querySelector(
+          ".finalGameOverResetButton"
+        );
+        startOverButton.addEventListener("click", () => {
+          sendGameData();
+        });
+
         return;
       }
     } else {
@@ -169,7 +175,7 @@ window.addEventListener("load", function () {
   });
 
   function sendGameData() {
-    const score = document.getElementById("finalTotalCoins").textContent;
+    const score = document.getElementById("finalTotalScore").textContent;
 
     console.log(score);
     const rating = document.getElementById("ratingDisplay").value;
@@ -185,12 +191,10 @@ window.addEventListener("load", function () {
       gameId: gameId,
       userId: userId,
       score: parseFloat(score),
-      playTime: totalTimeSpent,
+      playTime: parseFloat(totalTimeSpent),
       rating: parseFloat(rating),
       isFavorite: isFavorite,
     };
-
-    console.log("Game Data:", gameData);
 
     if (!userId || !gameId) {
       return console.log("GameData", gameData);
