@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/test.css" />
+  </head>
+  <body>
+    <div id="finalGameOverScreen">
+      <h2 id="finalGameOver"></h2>
+      <h3>your total score: <span id="finalTotalScore"></span></h3>
+      <h3>total coins : <span id="finalTotalCoins"></span></h3>
+      <div class="ratingcontainer">
+        <h3>Rate this game – is it a keeper?</h3>
+
+        <input
+          type="range"
+          min="0"
+          max="5"
+          step="0.5"
+          value="0.5"
+          class="slider"
+          id="favoriteRating"
+        />
+
+        <input
+          type="number"
+          readonly
+          id="ratingDisplay"
+          name="favoriteRating"
+          value="0.5"
+        />
+      </div>
+      <div class="favoriteContainer">
+        <h3>Is this a game you'd mark as a favorite?</h3>
+        <label>
+          <input
+            type="radio"
+            name="isFavorite"
+            id="isFavoriteTrue"
+            value="true"
+          />
+          Yes
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="isFavorite"
+            id="isFavoriteFalse"
+            value="false"
+          />
+          No
+        </label>
+      </div>
+      <div id="bottom_buttonContainer">
+        <button id="welcomeScreenButton">Restart Game</button
+        ><button id="backToZatam">Zat.am</button>
+      </div>
+    </div>
+  </body>
+</html>

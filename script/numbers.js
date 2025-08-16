@@ -38,7 +38,7 @@ class Numbers {
 
     if (this.x + this.width < 0) {
       this.markedForDeletion = true;
-      // this.game.gameOver = true;
+      this.game.gameOver = true;
     }
     this.angle += this.velocityAngle;
     this.y += Math.sin(this.angle);

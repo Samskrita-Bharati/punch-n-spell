@@ -38,6 +38,7 @@ window.addEventListener("load", function () {
     const buttonId = e.target.id;
     if (buttonId === "welcomeScreenButton") {
       document.getElementById("welcomeScreen").style.display = "none";
+      document.getElementById("finalGameOverScreen").style.display = "none";
       document.getElementById("chooseGame").style.display = "block";
     } else if (buttonId === "firstSet") {
       document.getElementById("chooseGame").style.display = "none";
@@ -191,7 +192,7 @@ window.addEventListener("load", function () {
 
     console.log("Game Data:", gameData);
 
-    if (!userId) {
+    if (!userId || !gameId) {
       return console.log("GameData", gameData);
     }
 

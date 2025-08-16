@@ -75,7 +75,7 @@ canvas {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 500px;
-  height: 450px;
+  height: auto;
   justify-content: center;
   text-align: center;
   padding: 20px;
@@ -292,4 +292,135 @@ h2 {
     magenta,
     cyan
   ); /* Reverse gradient on hover */
+}
+#bottom_buttonContainer {
+  #welcomeScreen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    padding: 2%;
+    text-align: center;
+    font-size: 2vw; /* Scale with viewport */
+    color: khaki;
+  }
+
+  #welcomeScreen h1,
+  #welcomeScreen h2 {
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    font-family: "Tangerine", cursive;
+    font-size: 4vw; /* Responsive scaling */
+    margin: 0.5em 0;
+  }
+
+  #welcomeScreen p {
+    font-size: 1.5vw; /* Scales with screen size */
+    letter-spacing: 0.05em;
+    word-spacing: 0.05em;
+    font-weight: 900;
+    font-family: "Tangerine", cursive;
+    max-width: 800px; /* Limit text width for readability */
+    margin: 0.5em auto;
+  }
+
+  #welcomeScreen button {
+    font-size: 1.5vw;
+    font-family: "Tangerine", cursive;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-radius: 15px;
+    width: 50%; /* Relative to container */
+    max-width: 300px;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(to right, cyan, magenta, yellow, blue);
+    color: black;
+    box-shadow: 5px 5px 5px rgba(223, 223, 233, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+
+  #welcomeScreen button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to left, blue, yellow, magenta, cyan);
+  }
+
+  /* Media Queries for responsiveness */
+  @media (max-width: 1024px) {
+    #welcomeScreen {
+      font-size: 2.5vw;
+    }
+    #welcomeScreen h1,
+    #welcomeScreen h2 {
+      font-size: 6vw;
+    }
+    #welcomeScreen p {
+      font-size: 2vw;
+    }
+    #welcomeScreen button {
+      font-size: 2vw;
+      width: 60%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    #welcomeScreen {
+      font-size: 3vw;
+      padding: 5%;
+    }
+    #welcomeScreen h1,
+    #welcomeScreen h2 {
+      font-size: 7vw;
+    }
+    #welcomeScreen p {
+      font-size: 3vw;
+    }
+    #welcomeScreen button {
+      font-size: 3vw;
+      width: 70%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #welcomeScreen {
+      font-size: 4vw;
+    }
+    #welcomeScreen h1,
+    #welcomeScreen h2 {
+      font-size: 8vw;
+    }
+    #welcomeScreen p {
+      font-size: 4vw;
+    }
+    #welcomeScreen button {
+      font-size: 4vw;
+      width: 80%;
+    }
+  }
+
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+.ratingcontainer {
+  display: inline-block;
+  justify-content: space-evenly;
+  gap: 10px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.ratingcontainer input:nth-of-type(2) {
+  width: 45px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.favoriteContainer {
+  margin: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
 }
